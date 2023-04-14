@@ -355,7 +355,6 @@ df.to_csv('scrapped_data.csv', index=False)
 print("Csv created successfully")
 
 import streamlit as st
-import numpy as np
 
 st.set_page_config(page_title='OncoSearch')
 st.header('OncoSearch')
