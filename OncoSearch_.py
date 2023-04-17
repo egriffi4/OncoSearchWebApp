@@ -311,7 +311,7 @@ mdName11= data[:-6]
 mdSpecialty11='Breast Oncologist'
 # # School
 data = soup.find('body').find('div', {'class': 'fac_education'}).find('span').find_next_sibling("span").text
-mdSchool11= data[10:-21].strip()[:-1]
+mdSchool11= "Temple University School of Medicine"
 # # Hospital
 logo = soup.find('body').find('a', {'class': 'logo'})
 img = logo.find('img', alt=True)
@@ -340,7 +340,6 @@ resLink = [resLink1,resLink2,resLink3,resLink4,resLink5,resLink7,resLink8,resLin
 scrapped_data = {'mdName':mdName, 'mdSpecialty': mdSpecialty,'mdSchool': mdSchool,'mdFacility': mdFacility, 'facilityZip': facilityZip,'resLink': resLink}
 
 df=pd.DataFrame(scrapped_data)
-df['facilityZip']=pd.to_numeric(df['facilityZip'])
 print(df)
 df.to_csv('scrapped_data.csv', index=False)
 print("Csv created successfully")
@@ -351,7 +350,7 @@ st.set_page_config(page_title='OncoSearch')
 st.header('OncoSearch')
 st.subheader('Search for the best genitourinary or breast radiation oncologist near you')
 st.dataframe(df)
-text_search = st.text_input("Search for an oncologist by specialty")
+text_search = st.text_input("Search for an oncologist by specialty, name, or facility")
 m1=df["mdSpecialty"].str.contains(text_search)
 m2=df["mdName"].str.contains(text_search)
 df_search=df[m1|m2]
