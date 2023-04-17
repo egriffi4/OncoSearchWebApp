@@ -218,7 +218,7 @@ response = requests.get(url)
 soup = BeautifulSoup(response.content, 'html.parser')
 # # Name
 data = soup.find('h1').text
-mdName8 = data[:-6]
+mdName8 = "Safia K. Ahmed"
 # # mdSpecialty
 mdSpecialty8='Breast Oncologist'
 # # School
@@ -227,16 +227,11 @@ for i in range(len(span)):
     i = i+1
     data = span[i].text
     break
-mdSchool8 = data[-31:]
+mdSchool8 = "Mayo Clinic College of Medicine"
 # # facilityZip
 facilityZip8 = "55902"
 # # mdFacility
-try:
-    logo = soup.find('body').find('a', {'id': 'et_MayoLogo_DDD85D51'})
-    img = logo.find('img', alt=True)
-    mdFacility8 = img['alt']
-except:
-    mdFacility8 = None
+mdFacility8 = "Mayo Clinic"
 # # resLink
 resLink8 = 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=36573830&query_hl=11&itool=pubmed_docsum'
 
@@ -249,7 +244,7 @@ response = requests.get('https://www.mayoclinic.org/biographies/attia-albert-n-m
 soup = BeautifulSoup(response.content, 'html.parser')
 # # Name
 data = soup.find('h1').text
-mdName9 = data[:-6]
+mdName9 = "Albert N. Attia"
 # # mdSpecialty
 mdSpecialty9='Genitourinary Oncologist'
 # # School
@@ -258,16 +253,11 @@ for i in range(len(span)):
     i = i+1
     data = span[i].text
     break
-mdSchool9 = data[-36:]
+mdSchool9 = "Wake Forest University School of Medicine"
 # # facilityZip
-facilityZip9 = "32224"
+facilityZip9 = ("32224")
 # # mdFacility
-try:
-        logo = soup.find('body').find('a', {'id': 'et_MayoLogo_DDD85D51'})
-        img = logo.find('img', alt=True)
-        mdFacility9 = img['alt']
-except:
-    mdFacility9 = None 
+mdFacility9 = "Mayo Clinic"
 # # resLink
 response = requests.get('https://pubmed.ncbi.nlm.nih.gov/?term=albert+attia')
 soup = BeautifulSoup(response.content, 'html.parser')
@@ -350,9 +340,18 @@ resLink = [resLink1,resLink2,resLink3,resLink4,resLink5,resLink7,resLink8,resLin
 scrapped_data = {'mdName':mdName, 'mdSpecialty': mdSpecialty,'mdSchool': mdSchool,'mdFacility': mdFacility, 'facilityZip': facilityZip,'resLink': resLink}
 
 df=pd.DataFrame(scrapped_data)
+df['facilityZip']=pd.to_numeric(df['facilityZip'])
 print(df)
 df.to_csv('scrapped_data.csv', index=False)
 print("Csv created successfully")
+
+import pgeocode
+import certifi
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+dist=pgeocode.GeoDistance('US')
+print(dist.query_postal_code("13202","13126"))
+print(dist.query_postal_code(["13202"],["13126", "00544"]))
 
 import streamlit as st
 
@@ -363,10 +362,13 @@ st.dataframe(df)
 text_search = st.text_input("Search for an oncologist by specialty")
 m1=df["mdSpecialty"].str.contains(text_search)
 m2=df["mdName"].str.contains(text_search)
-m3=df["facilityZip"].str.contains(text_search)
 df_search=df[m1|m2]
 if text_search:
     st.write(df_search)
+
+
+
+
 
 
 # In[ ]:
