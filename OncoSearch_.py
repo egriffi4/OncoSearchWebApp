@@ -345,14 +345,6 @@ print(df)
 df.to_csv('scrapped_data.csv', index=False)
 print("Csv created successfully")
 
-import pgeocode
-import certifi
-import ssl
-ssl._create_default_https_context = ssl._create_unverified_context
-dist=pgeocode.GeoDistance('US')
-print(dist.query_postal_code("13202","13126"))
-print(dist.query_postal_code(["13202"],["13126", "00544"]))
-
 import streamlit as st
 
 st.set_page_config(page_title='OncoSearch')
