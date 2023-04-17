@@ -346,6 +346,8 @@ print("Csv created successfully")
 
 import streamlit as st
 
+
+
 st.set_page_config(page_title='OncoSearch')
 st.header('OncoSearch')
 st.subheader('Search for the best genitourinary or breast radiation oncologist near you')
@@ -356,8 +358,14 @@ m2=df["mdName"].str.contains(text_search)
 df_search=df[m1|m2]
 if text_search:
     st.write(df_search)
-
-
+    
+st.sidebar.title("Information included in this database:")
+st.sidebar.info(
+    "mdName – Physician’s Name\n\n"
+    "mdSpecialty – Physician’s specialty (Genitourinary or Breast Cancer)\n\n"
+    "mdSchool – The school the physician attended\n\n"
+    "mdFacility – The facility where the physician practices\n\n"
+    "resLink – A link to the physician’s latest research related to the specific cancer type\n\n")
 
 
 
