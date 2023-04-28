@@ -514,7 +514,7 @@ for p in soup.find('body').find_all('div', attrs={'class' : 'faculty-publication
 # # Hospital name
 div = soup.find('div', 'mda-nav-top flex-row')
 img = div.find('img', alt=True)
-mdFacility16 = img['alt']
+mdFacility17 = img['alt']
 # # facilityZip
 base = 'https://www.mdanderson.org/'
 parameters = 'about-md-anderson/our-locations/texas-medical-center.html'
