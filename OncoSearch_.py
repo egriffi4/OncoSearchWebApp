@@ -342,7 +342,7 @@ mdName12 = data[:-6]
 # # mdSpecialty
 mdSpecialty12='Genitourinary Oncologist'
 # # School
-mdSchool2 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
+mdSchool12 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
 # # resLink
 for p in soup.find('body').find_all('div', attrs={'class' : 'faculty-publications'}):
     resLink12 = p.a['href']
@@ -375,7 +375,7 @@ mdName13 = data[:-6]
 # # mdSpecialty
 mdSpecialty13='Genitourinary Oncologist'
 # # School
-mdSchool3 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
+mdSchool13 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
 # # resLink
 for p in soup.find('body').find_all('div', attrs={'class' : 'faculty-publications'}):
     resLink13 = p.a['href']
@@ -408,7 +408,7 @@ mdName14 = data[:-6]
 # # mdSpecialty
 mdSpecialty14='Genitourinary Oncologist'
 # # School
-mdSchool4 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
+mdSchool14 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
 # # resLink
 for p in soup.find('body').find_all('div', attrs={'class' : 'faculty-publications'}):
     resLink14 = p.a['href']
@@ -441,7 +441,7 @@ mdName15 = data[:-6]
 # # mdSpecialty
 mdSpecialty15='Genitourinary Oncologist'
 # # School
-mdSchool5 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
+mdSchool15 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
 # # resLink
 for p in soup.find('body').find_all('div', attrs={'class' : 'faculty-publications'}):
     resLink15 = p.a['href']
@@ -474,7 +474,7 @@ mdName16 = data[:-6]
 # # mdSpecialty
 mdSpecialty16='Genitourinary Oncologist'
 # # School
-mdSchool6 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
+mdSchool16 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
 # # resLink
 for p in soup.find('body').find_all('div', attrs={'class' : 'faculty-publications'}):
     resLink16 = p.a['href']
@@ -507,7 +507,7 @@ mdName17 = data[:-6]
 # # mdSpecialty
 mdSpecialty17='Breast Oncologist'
 # # School
-mdSchool7 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
+mdSchool17 = soup.find('body').find("td").find_next_sibling("td").text[:-33]
 # # resLink
 for p in soup.find('body').find_all('div', attrs={'class' : 'faculty-publications'}):
     resLink17 = p.a['href']
