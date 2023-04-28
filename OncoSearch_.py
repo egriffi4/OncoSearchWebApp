@@ -714,7 +714,7 @@ mdName25 = data[:-4]
 mdSpecialty25='Breast Oncologist '
 # # School
 parent = soup.find("body").find("div", {'class': 'doctor-accomplishments'}).find('ul', {'id':'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_MedicalSchoolList'})
-mdSchoo25 = parent.li.text
+mdSchool25 = parent.li.text
 # # resLink
 link = 'https://pubmed.ncbi.nlm.nih.gov'
 for p in soup.find_all('div', attrs={'id' : 'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_headingTWO'}):
@@ -745,7 +745,7 @@ mdName26 = data[:-4]
 mdSpecialty26='Genitourinary Oncologist '
 # # School
 parent = soup.find("body").find("div", {'class': 'doctor-accomplishments'}).find('ul', {'id':'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_MedicalSchoolList'})
-mdSchoo26 = parent.li.text
+mdSchool26 = parent.li.text
 # # resLink
 link = 'https://pubmed.ncbi.nlm.nih.gov'
 for p in soup.find_all('div', attrs={'id' : 'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_headingTWO'}):
