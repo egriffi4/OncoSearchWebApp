@@ -571,7 +571,7 @@ mdFacility19 = div.title.text
 facilityZip19 = "07748"
 # # resLink
 parent = soup.find('ul', attrs={'class' : 'msk-list msk-list--unordered'})
-resLink19 = base + parent.a['href']
+resLink19 = "https://pubmed.ncbi.nlm.nih.gov/31750868"
 
 # # 20th website
 base = 'https://www.mskcc.org/'
@@ -593,7 +593,7 @@ mdFacility20 = div.title.text
 facilityZip20 = "10065"
 # # resLink
 parent = soup.find('ul', attrs={'class' : 'msk-list msk-list--unordered'})
-resLink20 = base + parent.a['href']
+resLink20 = "https://pubmed.ncbi.nlm.nih.gov/33834176"
 
 # # 21st website
 response = requests.get('https://www.mayoclinic.org/biographies/ahmed-safia-k-m-d/bio-20433784')
