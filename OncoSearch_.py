@@ -718,7 +718,7 @@ mdSchool25 = parent.li.text
 # # resLink
 link = 'https://pubmed.ncbi.nlm.nih.gov'
 for p in soup.find_all('div', attrs={'id' : 'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_headingTWO'}):
-     resLink25 = link + p.a['href']
+     resLink25 = "https://pubmed.ncbi.nlm.nih.gov/34387794/"
 # # mdFacility
 logo = soup.find('body').find('figure', {'class': 'logo'})
 img = logo.find('img', alt=True)
@@ -749,7 +749,7 @@ mdSchool26 = parent.li.text
 # # resLink
 link = 'https://pubmed.ncbi.nlm.nih.gov'
 for p in soup.find_all('div', attrs={'id' : 'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_headingTWO'}):
-     resLink26 = link + p.a['href']
+     resLink26 = "https://pubmed.ncbi.nlm.nih.gov/28545997/"
 # # mdFacility
 logo = soup.find('body').find('figure', {'class': 'logo'})
 img = logo.find('img', alt=True)
