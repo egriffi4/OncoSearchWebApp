@@ -722,12 +722,7 @@ logo = soup.find('body').find('figure', {'class': 'logo'})
 img = logo.find('img', alt=True)
 mdFacility25 = img['alt']
 # # facilityZip                                                                                                                                                                                                                                                                          
-div = soup.find('body').find('div', {'id': 'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_LocationsList'})
-data = div.p.text.split()
-for i in range(len(data)):
-    i = i+6
-    facilityZip25 = data[i][:5]
-    break
+facilityZip25 = "02190"
 
 
 # # 26th website
@@ -751,12 +746,8 @@ logo = soup.find('body').find('figure', {'class': 'logo'})
 img = logo.find('img', alt=True)
 mdFacility26 = img['alt']
 # # facilityZip                                                                                                                                                                                                                                                                          
-div = soup.find('body').find('div', {'id': 'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_LocationsList'})
-data = div.p.text.split()
-for i in range(len(data)):
-    i = i+6
-    facilityZip26 = data[i][:5]
-    break
+facilityZip26 = "02190"
+
 
 
 
