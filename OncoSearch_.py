@@ -716,9 +716,7 @@ mdSpecialty25='Breast Oncologist '
 parent = soup.find("body").find("div", {'class': 'doctor-accomplishments'}).find('ul', {'id':'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_MedicalSchoolList'})
 mdSchool25 = parent.li.text
 # # resLink
-link = 'https://pubmed.ncbi.nlm.nih.gov'
-for p in soup.find_all('div', attrs={'id' : 'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_headingTWO'}):
-     resLink25 = "https://pubmed.ncbi.nlm.nih.gov/34387794/"
+resLink25 = "https://pubmed.ncbi.nlm.nih.gov/34387794/"
 # # mdFacility
 logo = soup.find('body').find('figure', {'class': 'logo'})
 img = logo.find('img', alt=True)
@@ -747,9 +745,7 @@ mdSpecialty26='Genitourinary Oncologist '
 parent = soup.find("body").find("div", {'class': 'doctor-accomplishments'}).find('ul', {'id':'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_MedicalSchoolList'})
 mdSchool26 = parent.li.text
 # # resLink
-link = 'https://pubmed.ncbi.nlm.nih.gov'
-for p in soup.find_all('div', attrs={'id' : 'ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_headingTWO'}):
-     resLink26 = "https://pubmed.ncbi.nlm.nih.gov/28545997/"
+resLink26 = "https://pubmed.ncbi.nlm.nih.gov/28545997/"
 # # mdFacility
 logo = soup.find('body').find('figure', {'class': 'logo'})
 img = logo.find('img', alt=True)
